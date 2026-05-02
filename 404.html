@@ -12,7 +12,10 @@
           if (data[path]) {
             window.location.href = data[path];
           }
+        } catch (err) {
+          console.error(err);
         }
+      )
     </script>
   </body>
 </html>
