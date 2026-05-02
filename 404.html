@@ -7,7 +7,7 @@
         try {
           const path = window.location.pathname.slice(1);
           const response = await fetch("https://click.waspberry.com/click.json");
-          if !response.ok throw new Error("Cannot load click.json");
+          if (!response.ok) throw new Error("Cannot load click.json");
           const data = await response.json();
           if (data[path]) {
             window.location.href = data[path];
