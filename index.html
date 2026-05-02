@@ -1,1 +1,26 @@
-Waspberry Click
+<h1>Welcome to Waspberry Click!</h1>
+<p>All Click redirects are listed below.</p>
+<div id="click-redirects"></div>
+<script>
+  fetch("https://click.waspberry.com/click.json")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("click-redirects");
+    const table = document.createElement("table");
+    table.style.borderCollapse = "collapse";
+    const header = table.insertRow();
+    ["ID", "URL"].forEach(text => {
+      const th = document.createElement("th");
+      th.textContent = text;
+      header.appendChild(th);
+    });
+    Object.entries(data).forEach(([id, url]) => {
+      const row = table.insertRow();
+      [id, url].forEach(value => {
+        const cell = row.insertCell();
+      })
+    });
+    container.appendChild(table);
+  })
+  .catch(err => console.error(err))
+</script>
