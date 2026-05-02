@@ -18,6 +18,7 @@
       const row = table.insertRow();
       [id, url].forEach(value => {
         const cell = row.insertCell();
+        cell.textContent = value;
       })
     });
     container.appendChild(table);
